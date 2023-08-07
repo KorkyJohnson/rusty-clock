@@ -43,3 +43,45 @@ fn calc_minute_degree(minutes: u32, seconds: u32) -> f32 {
 fn calc_second_degree(seconds: u32) -> f32 {
     seconds as f32 * SECOND_DEGREE
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_second_degree() {
+        assert_eq!(calc_second_degree(0), 0.0);
+        assert_eq!(calc_second_degree(15), 90.0);
+        assert_eq!(calc_second_degree(30), 180.0);
+        assert_eq!(calc_second_degree(45), 270.0);
+        assert_eq!(calc_second_degree(60), 360.0);
+    }
+
+    #[test]
+    fn test_minute_degree() {
+        assert_eq!(calc_minute_degree(0, 0), 0.0);
+        assert_eq!(calc_minute_degree(15, 0), 90.0);
+        assert_eq!(calc_minute_degree(30, 0), 180.0);
+        assert_eq!(calc_minute_degree(45, 0), 270.0);
+        assert_eq!(calc_minute_degree(60, 0), 360.0);
+
+        assert_eq!(calc_minute_degree(0, 15), 1.5);
+        assert_eq!(calc_minute_degree(15, 15), 91.5);
+        assert_eq!(calc_minute_degree(30, 30), 183.0);
+        assert_eq!(calc_minute_degree(45, 45), 274.5);
+    }
+
+    #[test]
+    fn test_hour_degree() {
+        assert_eq!(calc_hour_degree(0, 0), 0.0);
+        assert_eq!(calc_hour_degree(3, 0), 90.0);
+        assert_eq!(calc_hour_degree(6, 0), 180.0);
+        assert_eq!(calc_hour_degree(9, 0), 270.0);
+        assert_eq!(calc_hour_degree(12, 0), 360.0);
+
+        assert_eq!(calc_hour_degree(0, 15), 7.5);
+        assert_eq!(calc_hour_degree(3, 15), 97.5);
+        assert_eq!(calc_hour_degree(6, 30), 195.0);
+        assert_eq!(calc_hour_degree(9, 45), 292.5);
+    }
+}

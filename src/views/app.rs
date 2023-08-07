@@ -2,8 +2,8 @@ use yew::prelude::*;
 use chrono::Utc;
 use chrono_tz::{
     Asia::Tokyo,
-    America::New_York,
-    Europe::Paris,
+    America::Toronto,
+    Europe::Amsterdam,
 };
 
 use crate::components::*;
@@ -17,13 +17,13 @@ pub fn App() -> Html {
                 <Plate>{"Tokyo"}</Plate>
             </div>
             <div>
-                <Clock time={Utc::now().with_timezone(&New_York)} />
-                <Plate>{"New York"}</Plate>
+                <Clock time={Utc::now().with_timezone(&Toronto)} />
+                <Plate>{"Ottawa"}</Plate>
             </div>
 
             <div>
-                <Clock time={Utc::now().with_timezone(&Paris)} />
-                <Plate>{"Paris"}</Plate>
+                <Clock time={Utc::now().with_timezone(&Amsterdam)} />
+                <Plate>{"Schrepennisse"}</Plate>
             </div>
         </div>
     }
