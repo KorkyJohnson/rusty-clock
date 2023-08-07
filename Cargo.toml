@@ -1,8 +1,18 @@
 [package]
-name = "rusty_clock"
+name = "rusty-clock"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+# replicating this project here https://towardsdev.com/building-web-apps-with-rust-a-practical-guide-part-1-introduction-5b86ba91b44a  
+
 [dependencies]
+# web framework
+yew = {version = "0.20.0", features = ["csr"]} 
+
+# library that allows us to manipulate dates/times
+chrono = "0.4.26"
+
+# add-on for chrono to handle time zones
+chrono-tz = "0.8.2"

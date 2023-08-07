@@ -1,3 +1,8 @@
+mod components;
+mod views;
+
+use crate::views::App;
+
 fn main() {
-    println!("Hello, world!");
+    yew::Renderer::<App>::new().render();
 }
