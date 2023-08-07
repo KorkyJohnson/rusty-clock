@@ -16,3 +16,6 @@ chrono = "0.4.26"
 
 # add-on for chrono to handle time zones
 chrono-tz = "0.8.2"
+
+# web-sys wrapper
+gloo = "0.8"
